@@ -1,0 +1,9 @@
+# Node / React / Build folders
+node_modules/
+build/
+dist/
+.env
+.DS_Store
+.vscode/
+npm-debug.log
+yarn-error.log
