@@ -181,6 +181,10 @@ Reachinbox-Assignment/
 
 📊 Dashboard Analytics (AI accuracy, response time, etc.)
 
+## 🎥 Demo Video
+Watch the project demo here:  
+👉 [ReachInbox AI Demo Video](https://drive.google.com/file/d/1RlDj7HUKAEnr_-e4YmL5DD2CZaUiOqqz/view?usp=sharing)
+
 🧑‍💻 Author
 
 👩‍💻 Pavana K.V
