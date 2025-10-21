@@ -92,7 +92,7 @@ Create a .env file inside Reachinbox-backend/ with:
 
 PORT=3000
 GEMINI_API_KEY=your_google_generative_ai_key
-IMAP_EMAIL=pavanakv0911@gmail.com
+IMAP_EMAIL=your_mail@gmail.com
 IMAP_PASSWORD=your_app_specific_password
 ELASTIC_URL=http://localhost:9200
 CHROMADB_PATH=./data/vectorstore
@@ -108,9 +108,9 @@ npx ts-node src/index.ts
 
 ✅ It should print:
 
-🟢 Server running at http://localhost:3000
-✅ Connected to Gmail
-✅ Vector DB initialized
+Server running at http://localhost:3000
+Connected to Gmail
+Vector DB initialized
 
 5️⃣ Run the Frontend
 cd Reachinbox-frontend
@@ -125,27 +125,49 @@ You’ll see your AI Smart Inbox dashboard ✨
 Email Received	AI Summary	AI Suggested Reply
 “Hi, your resume is shortlisted for interview.”	“Your profile was shortlisted; they are asking for interview availability.”	“Thank you for shortlisting my profile! I’m available for the interview. You can book a slot here: https://cal.com/example”
 📂 Folder Structure
-ReachInbox-AI/
+Reachinbox-Assignment/
 ├── Reachinbox-backend/
-│   ├── src/
-│   │   ├── api/
-│   │   │   ├── summary.ts
-│   │   │   ├── suggestReply.ts
-│   │   ├── services/
-│   │   │   ├── vectorDB.ts
-│   │   │   ├── summaryService.ts
-│   │   │   ├── aiReplyService.ts
-│   │   └── index.ts
-│   ├── package.json
-│   └── .env
+│ ├── src/
+│ │ ├── config/
+│ │ │ └── elasticsearch.ts # Elasticsearch setup
+│ │ ├── controllers/
+│ │ │ └── inboxController.ts # Handles inbox operations
+│ │ ├── data/
+│ │ │ └── context.json # Context data for embeddings
+│ │ ├── routes/
+│ │ │ ├── aiReplyRoutes.ts # Route for AI reply
+│ │ │ ├── aiRoutes.ts # General AI routes
+│ │ │ ├── classifyEmails.ts # Categorization routes
+│ │ │ ├── inboxRoutes.ts # Email inbox endpoints
+│ │ │ ├── summaryRoutes.ts # Route for AI summarization
+│ │ ├── services/
+│ │ │ ├── aiReplyService.ts # Uses Gemini for reply generation
+│ │ │ ├── summaryService.ts # Uses Gemini for summarization
+│ │ │ ├── vectorDB.ts # Vector database (Chroma) setup
+│ │ │ ├── emailIndexService.ts # Indexing emails in Elasticsearch
+│ │ │ ├── imapService.ts # IMAP email fetching logic
+│ │ │ ├── notificationService.ts # Email notification triggers
+│ │ │ └── aiCategorizer.ts # AI-based classification
+│ │ ├── types/
+│ │ │ └── mailparser.d.ts # Custom TypeScript definitions
+│ │ └── index.ts # Server entry point
+│ ├── .env # Environment configuration
+│ ├── docker-compose.yml
+│ ├── package.json
+│ └── tsconfig.json
 │
-└── Reachinbox-frontend/
-    ├── src/
-    │   ├── App.tsx
-    │   ├── services/
-    │   │   └── emailService.ts
-    ├── package.json
-    └── tailwind.config.js
+└── Reachinbox-Frontend/
+├── src/
+│ ├── assets/ # Static assets
+│ ├── services/ # API calls (emailService.ts)
+│ ├── App.tsx # Main dashboard UI
+│ ├── index.css # Global styles
+│ ├── App.css # Custom components styling
+│ ├── main.tsx # Entry file
+├── public/ # Static public files
+├── package.json
+├── tailwind.config.js
+└── vite.config.ts++++++++++
 
 🚀 Future Enhancements
 
@@ -164,3 +186,4 @@ ReachInbox-AI/
 👩‍💻 Pavana K.V
 🎓 Information Science Engineering Student (VTU)
 💡 Passionate about AI, Machine Learning & Full Stack Development
+📍 Location: India
